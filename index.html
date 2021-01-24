@@ -22,7 +22,7 @@
             <div class="col-md-3 bg-light rounded" style="height: 900px;">
                 <h3>Search for a City:</h3>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" id="searchName" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-primary bg-gradient" type="submit">Search</button>
                 </form>
     <!-- div for past searches -->
@@ -31,14 +31,20 @@
                 </div>
             </div>
     <!-- Weather Dashboard container -->
-            <div class="container col-xl-9 border rounded" id="today" style="padding: 20px; height: 400px;">
-                <div class="boarder-bottom" style="height: 600px;">
-                    <h1><span id="city">Test</span>(<span id="todaysDate">1/1/2021</spam>)</h1> 
+            <div class="col-xl-9" id="today" style="padding: 20px; height: 400px;">
+                <div class="border rounded" style="height: 400px;">
+                    <h1><span id="city">Test</span>(<span id="todaysDate">1/1/2021</spam>) <span id="todaysIcon">--</span></h1> 
                     <p>Temperature: <span id="todaysTemp">--</span> °F</p>
                     <p>Humidity: <span id="todaysHumidty">--</span> %</p>
                     <p>Windspeed: <span id="todaysWind">--</span> MPH</p>
                     <p>UV Index: <span class="bg-danger bg-gradient rounded text-light" style="padding: 5px" id="todaysUV">--</span></p>
                 </div>
+                <div class="row" style="padding: 20px;">
+                    test
+                </div>
+            </div>
+            <div>
+                test
             </div>
         </div>
     </div>
