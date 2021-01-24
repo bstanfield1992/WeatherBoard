@@ -17,17 +17,25 @@
         </div>
     </nav>
     <div class="container">
+        <div class="row">
     <!-- Search container -->
-        <div class="col-md-2">
-            <h3>Search for a City:</h3>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-        </div>
+            <div class="col-md-3 bg-light rounded" style="height: 900px;">
+                <h3>Search for a City:</h3>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+    <!-- div for past searches -->
+                <div>
+
+                </div>
+            </div>
     <!-- Weather Dashboard container -->
-        <div class="col-xl-10">
-            
+            <div class="container col-xl-9 border rounded" id="today" style="padding: 20px; height: 400px;">
+                <div class="boarder-bottom" style="height: 600px;">
+                    <h1><span id="city">Tucson</span>(<span id="todaysDate">1/1/2021</spam>)</h1>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Link js -->
