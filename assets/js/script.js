@@ -1,32 +1,44 @@
 // add variables
-var searchedName = document.getElementById('searchedName')
-var todays
-// add fetch
-searchedName = 'tucson'
+var searchedName = document.querySelector('#searchName').value;
+var todaysDateText = document.getElementById('todaysDate');
+var todaysDate = moment();
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q='
- + searchedName +
-'&appid=0dedb61addcebc5a71ee712c4f54186d')
-  .then(response => response.json())
-  .then(data => console.log(data));
+
+todaysDate.format('MM DD YYYY')
+// add fetch
+function getData(searchedName) {
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='
+    + searchedName +
+   '&appid=0dedb61addcebc5a71ee712c4f54186d')
+     .then(response => response.json())
+     .then(data => console.log(data));
+    futureWeather(data);
+}
+
 
 // on load search
-
-
-
+    getData(searchedName)
 // create cards for future days
-function futureWeather() {
-    for(var i = 1; i < 7; i++) {
-        var dayVar = 'day' + [i]
+function futureWeather(data) {
+    for(var i = 1; i < 6; i++) {
+        var dayVar = 'date' + [i]
+        var icon = date.
         dayVar.toString();
-        console.log(dayVar)
         var day = document.getElementById(dayVar);
-        console.log(day);
-        day.textContent = '1/'+[i]+'/2021'
+        day.textContent = todaysDate.add(1, 'd').format('MM DD YYYY').toString();
+        
     }
 }
+
 futureWeather();
 // add search button functionality
-
+function searchFunction() {
+    debugger;
+    
+    console.log(searchedName);
+    getData(searchedName);
+    
+};
 
 // add past searches
