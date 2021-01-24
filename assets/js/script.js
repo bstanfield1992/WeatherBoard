@@ -1,6 +1,6 @@
 // add variables
 var searchedName = document.getElementById('searchedName')
-var 
+var todays
 // add fetch
 searchedName = 'tucson'
 
