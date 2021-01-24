@@ -23,7 +23,7 @@
                 <h3>Search for a City:</h3>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    <button class="btn btn-primary bg-gradient" type="submit">Search</button>
                 </form>
     <!-- div for past searches -->
                 <div>
@@ -33,7 +33,11 @@
     <!-- Weather Dashboard container -->
             <div class="container col-xl-9 border rounded" id="today" style="padding: 20px; height: 400px;">
                 <div class="boarder-bottom" style="height: 600px;">
-                    <h1><span id="city">Tucson</span>(<span id="todaysDate">1/1/2021</spam>)</h1>
+                    <h1><span id="city">Test</span>(<span id="todaysDate">1/1/2021</spam>)</h1> 
+                    <p>Temperature: <span id="todaysTemp">--</span> °F</p>
+                    <p>Humidity: <span id="todaysHumidty">--</span> %</p>
+                    <p>Windspeed: <span id="todaysWind">--</span> MPH</p>
+                    <p>UV Index: <span class="bg-danger bg-gradient rounded text-light" id="todaysUV">--</span></p>
                 </div>
             </div>
         </div>
