@@ -46,8 +46,6 @@ generateCards(searchedName);
 
 searchFunction();
 
-// searchFunction()
-
 function generateCards(searchedName) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='
     + searchedName + '&appid=7501ebd3228baf3b901ed2b41be06662')
@@ -70,7 +68,7 @@ function generateCards(searchedName) {
             day.textContent = todaysDate.add(1, 'd').format('MM/DD/YYYY').toString();
             futureTemp.textContent = Math.round((response.list[listItem].main.temp - 273.15) * (9/5) + 32);
             futureHumidity.textContent = response.list[listItem].main.humidity;
-            console.log(listItem)
+            // console.log(listItem)
             listItem = listItem + 8;
         }
         todaysDate = todaysDate.add(-5, 'd');
@@ -97,3 +95,8 @@ function getUV(latitude, longitude) {
 
 
 // add past searches
+function addPastSearches() {
+    
+}
+
+addPastSearches();
