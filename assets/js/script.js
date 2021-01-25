@@ -67,13 +67,17 @@ function generateCards() {
 //get UV index
 
 function getUV(latitude, longitude) {
-    fetch('https://http://api.openweathermap.org/data/2.5/uvi?lat='
+    fetch('https://api.openweathermap.org/data/2.5/uvi?lat='
     + latitude + '&lon=' + longitude + '&appid=7501ebd3228baf3b901ed2b41be06662')
- .then(response => response.json())
- .then(data => console.log(data));
+    .then(function(response) {
+        return response.json();
+      })
+    .then(function(response) {
+        console.log(response);
+        var uv = response.value;
+        todaysUV.textContent = uv;
+    });
 
-    // var uv = ;
-    // return uv;
 };
 
 
