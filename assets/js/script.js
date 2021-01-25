@@ -1,12 +1,11 @@
 // add variables
-var searchedName = document.querySelector('#searchName').value;
+
 var todaysDateText = document.getElementById('todaysDate');
 var todaysDate = moment();
 var todaysUV = document.getElementById('todaysUV');
 
 function searchFunction() {
-
-var futureCards = document.getElementById('futureCards');
+var searchedName = document.querySelector('#searchName').value;
 var city = document.getElementById('city');
 
 
@@ -34,18 +33,18 @@ getUV(latitude, longitude);
     
 // create cards for future days
 
-generateCards();
-
+generateCards(searchedName);
+todaysDate = todaysDate.add(-5, 'd');
 
 
     
 }
 
-// on load search
+searchFunction();
 
-searchFunction()
+// searchFunction()
 
-function generateCards() {
+function generateCards(searchedName) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='
     + searchedName + '&appid=7501ebd3228baf3b901ed2b41be06662')
     .then(function(response) {
@@ -56,13 +55,15 @@ function generateCards() {
 
         for(var i = 1; i < 6; i++) {
             var dayVar = 'date' + [i]
-            // var icon = date.;
+            var icon = response.list[0].weather.icon;
+            console.log(icon);
             dayVar.toString();
             var day = document.getElementById(dayVar);
             day.textContent = todaysDate.add(1, 'd').format('MM/DD/YYYY').toString();
-            
         }
-    });   
+    });  
+    
+    
 };
 //get UV index
 
