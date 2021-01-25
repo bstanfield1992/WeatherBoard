@@ -87,6 +87,14 @@ function getUV(latitude, longitude) {
     .then(function(response) {
         console.log(response);
         var uv = response.value;
+        todaysUV.removeAttribute('class')
+        if(uv > 9) {
+            todaysUV.classList.add('bg-gradient', 'rounded', 'text-light' ,'bg-danger')
+        } else if (uv > 5) {
+            todaysUV.classList.add('bg-gradient', 'rounded', 'text-light', 'bg-warning')
+        } else {
+            todaysUV.classList.add('bg-gradient', 'rounded', 'text-light', 'bg-success')
+        }
         todaysUV.textContent = uv;
     });
 
@@ -96,7 +104,7 @@ function getUV(latitude, longitude) {
 
 // add past searches
 function addPastSearches() {
-    
+
 }
 
 addPastSearches();
