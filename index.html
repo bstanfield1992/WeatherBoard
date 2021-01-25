@@ -24,8 +24,8 @@
             <div class="col-md-3 bg-light rounded" style="height: 900px;">
                 <h3>Search for a City:</h3>
                 <form class="d-flex">
-                    <input class="form-control me-2" id="searchName" type="search" placeholder="City" aria-label="Search" value="Tucson">
-                    <button onclick="searchFunction()" class="btn btn-primary bg-gradient" type="submit">Search</button>
+                    <input class="form-control me-2" id="searchName" type="text" placeholder="City" aria-label="Search" value="Tucson">
+                    <button onclick="searchFunction(); return false;" class="btn btn-primary bg-gradient" type="submit">Search</button>
                 </form>
     <!-- div for past searches -->
                 <div>
@@ -35,13 +35,13 @@
     <!-- Weather Dashboard container -->
             <div class="col-xl-9" id="today" style="padding: 20px; height: 400px;">
                 <div class="border rounded" style="height: 400px; padding-left: 20px;">
-                    <h1><span id="city">Test</span>(<span id="todaysDate">1/1/2021</spam>) <span id="todaysIcon">--</span></h1> 
+                    <h1><span id="city">Test</span>(<span id="todaysDate">1/1/2021</spam> <span id="todaysIcon">--</span></h1> 
                     <p>Temperature: <span id="todaysTemp">--</span> °F</p>
                     <p>Humidity: <span id="todaysHumidty">--</span> %</p>
                     <p>Windspeed: <span id="todaysWind">--</span> MPH</p>
                     <p>UV Index: <span class="bg-danger bg-gradient rounded text-light" style="padding: 5px" id="todaysUV">--</span></p>
                 </div>
-                <div class="row gap-3" style="padding: 10px;">
+                <div class="row gap-3" id="futureCards" style="padding: 10px;">
                     <!-- 5 day cards -->
                     <div class="col-2 bg-primary bg-gradient rounded text-light" id="day1" style="height: 300px; width: 150px; padding: 10px;">
                         <h4><span id="date1">1/0/2021</span></h4>
