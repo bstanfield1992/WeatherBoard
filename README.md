@@ -11,7 +11,7 @@ show the weather at the city of your choice
 
 ## Website
 
-https://bstanfield1992.github.io/password-generator/
+https://bstanfield1992.github.io/WeatherBoard/?
 
 ![Screenshot](./assets/images/weather.png)
 
