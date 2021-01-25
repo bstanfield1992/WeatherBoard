@@ -56,12 +56,22 @@ function generateCards(searchedName) {
       })
     .then(function(response) {
         console.log(response);
-
+        var listItem = 0;
         for(var i = 1; i < 6; i++) {
+            var humvar = 'day' + [i] + 'Humidity';
+            // console.log(humvar);
+            var tempvar = 'day' + [i] + 'temp';
+            // console.log(tempvar)
+            var futureTemp = document.getElementById(tempvar);
+            var futureHumidity = document.getElementById(humvar);
             var dayVar = 'date' + [i]
             dayVar.toString();
             var day = document.getElementById(dayVar);
             day.textContent = todaysDate.add(1, 'd').format('MM/DD/YYYY').toString();
+            futureTemp.textContent = Math.round((response.list[listItem].main.temp - 273.15) * (9/5) + 32);
+            futureHumidity.textContent = response.list[listItem].main.humidity;
+            console.log(listItem)
+            listItem = listItem + 8;
         }
         todaysDate = todaysDate.add(-5, 'd');
     });  
