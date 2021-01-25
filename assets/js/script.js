@@ -6,6 +6,9 @@ var todaysUV = document.getElementById('todaysUV');
 var todaysTemp = document.getElementById('todaysTemp');
 var todaysHumidity = document.getElementById('todaysHumidity');
 var todaysWind = document.getElementById('todaysWind');
+
+// search button
+
 function searchFunction() {
 var searchedName = document.querySelector('#searchName').value;
 var city = document.getElementById('city');
@@ -39,7 +42,7 @@ getUV(latitude, longitude);
 
 generateCards(searchedName);
 
-
+addPastSearches(searchedName);
 
     
 }
@@ -103,8 +106,16 @@ function getUV(latitude, longitude) {
 
 
 // add past searches
-function addPastSearches() {
-
+var count = 0;
+function addPastSearches(searchedName) {
+    
+    var searches = [searchedName];
+    searches[count] = searchedName;
+    console.log(searches)
+    // for (var i = 0; i < searches.length + 1; i++) {
+        
+    // }
+    localStorage.setItem("searches" + count, searchedName);
+    count = count + 1;
+    console.log(count);
 }
-
-addPastSearches();
